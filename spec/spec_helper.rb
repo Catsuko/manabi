@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'byebug'
+require 'redis'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -14,4 +15,8 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.example_status_persistence_file_path = 'spec/examples.txt'
   config.warnings = true
+
+  config.before(:each, :using_redis) do
+    Redis.new.flushdb
+  end
 end
