@@ -13,7 +13,7 @@ module Manabi
         raise ArgumentError, 'Only topics can be added' unless all_topics?(topics)
 
         tap do
-          @redis.sadd(@key, *topics) unless topics.empty?
+          @redis.sadd(@key, topics) unless topics.empty?
         end
       end
 
@@ -23,7 +23,7 @@ module Manabi
         else
           raise ArgumentError, 'Only topics can be taken' unless all_topics?(topics)
 
-          topics.tap { @redis.srem(@key, *topics) }
+          topics.tap { @redis.srem(@key, topics) }
         end
       end
 

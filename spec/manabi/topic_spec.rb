@@ -45,4 +45,30 @@ RSpec.describe Manabi::Topic do
       end
     end
   end
+
+  describe 'comparing topics' do
+    let(:topic_str) { 'Cats' }
+    subject { described_class.new(topic_str) }
+
+    context 'compared to same topic str' do
+      let(:other) { topic_str.downcase }
+
+      it { is_expected.to eq other }
+      it { is_expected.not_to be other }
+    end
+
+    context 'compared to same topic' do
+      let(:other) { described_class.new(topic_str.downcase) }
+
+      it { is_expected.to eq other }
+      it { is_expected.to be other }
+    end
+
+    context 'compared to different topic' do
+      let(:other) { described_class.new('Dogs') }
+
+      it { is_expected.not_to eq other }
+      it { is_expected.not_to be other }
+    end
+  end
 end

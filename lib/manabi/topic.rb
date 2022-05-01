@@ -15,6 +15,19 @@ module Manabi
       @topic.upcase
     end
 
+    def ==(other)
+      to_s == other.to_s.upcase
+    end
+
+    def eql?(other)
+      other.is_a?(self.class) && to_s == other.to_s
+    end
+
+    def hash
+      to_s.hash
+    end
+
     alias inspect to_s
+    alias equal? eql?
   end
 end
