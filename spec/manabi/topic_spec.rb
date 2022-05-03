@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'manabi'
-
 RSpec.describe Manabi::Topic do
   let(:source_val) { 'Graph Databases' }
   let(:topic) { described_class.new(source_val) }

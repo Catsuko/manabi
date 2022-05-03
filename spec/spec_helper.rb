@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 require 'byebug'
+require 'manabi'
 require 'redis'
+require 'rack/test'
 
 RSpec.configure do |config|
+  config.include Rack::Test::Methods, type: :api
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

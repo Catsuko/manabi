@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'manabi'
-
 RSpec.describe Manabi::Deck::RedisSet, :using_redis do
   let(:deck) { described_class.new(Redis.new, key: 'deck') }
   let(:initial_topics) { %w[snakes ladders].map { |topic| Manabi::Topic.new(topic) } }

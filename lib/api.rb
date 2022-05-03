@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'sinatra'
+require 'sinatra/namespace'
 require 'rack/contrib'
 require_relative 'manabi'
 
@@ -9,7 +10,6 @@ use Rack::JSONBodyParser
 set :default_content_type, :json
 set :show_exceptions, :after_handler
 
-# TODO: Test Coverage
 # TODO: Remove Duplication in parameter parsing
 # TODO: Remove Duplication in route definitions
 # TODO: Parameter Validation (required, in bounds etc)
