@@ -13,6 +13,7 @@ set :show_exceptions, :after_handler
 # TODO: Remove Duplication in parameter parsing
 # TODO: Remove Duplication in route definitions
 # TODO: Parameter Validation (required, in bounds etc)
+# TODO: Refactor to modular api so each resource can be in a separate file
 
 get '/decks/:id/topics' do |deck_id|
   cache_control :no_store
