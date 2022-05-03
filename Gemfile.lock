@@ -57,11 +57,14 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  redis
+  redis (~> 4.6)
   rspec
   rubocop
   rubocop-rspec
-  sinatra
+  sinatra (~> 2.2)
+
+RUBY VERSION
+   ruby 2.6.8p205
 
 BUNDLED WITH
    2.2.28
