@@ -27,6 +27,10 @@ module Manabi
       to_s.hash
     end
 
+    def to_json(*)
+      to_s.to_json
+    end
+
     alias inspect to_s
     alias equal? eql?
   end

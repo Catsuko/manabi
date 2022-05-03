@@ -12,9 +12,7 @@ module Manabi
       def add(*topics)
         raise ArgumentError, 'Only topics can be added' unless all_topics?(topics)
 
-        tap do
-          @redis.sadd(@key, topics) unless topics.empty?
-        end
+        topics.tap { @redis.sadd(@key, topics) unless topics.empty? }
       end
 
       def take(*topics)
