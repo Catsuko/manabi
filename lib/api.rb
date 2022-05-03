@@ -10,26 +10,30 @@ use Rack::JSONBodyParser
 set :default_content_type, :json
 set :show_exceptions, :after_handler
 
-# TODO: Remove Duplication in parameter parsing
 # TODO: Parameter Validation (required, in bounds etc)
 
 namespace '/decks/:id/topics' do
-  get do |deck_id|
+  helpers do
+    def deck
+      Manabi.create_deck(params.fetch(:id))
+    end
+
+    def topics
+      Manabi.create_topics(*params.fetch(:topics, []))
+    end
+  end
+
+  get do
     cache_control :no_store
 
-    deck = Manabi.create_deck(deck_id)
     deck.peek(params[:number].to_i).to_json
   end
 
-  post do |deck_id|
-    deck = Manabi.create_deck(deck_id)
-    topics = Manabi.create_topics(*params.fetch(:topics, []))
+  post do
     deck.add(*topics).to_json
   end
 
-  delete do |deck_id|
-    deck = Manabi.create_deck(deck_id)
-    topics = Manabi.create_topics(*params.fetch(:topics, []))
+  delete do
     deck.take(*topics).to_json
   end
 end
