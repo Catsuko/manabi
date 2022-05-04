@@ -15,13 +15,15 @@ set :show_exceptions, :after_handler
 namespace '/decks/:id/topics' do
   helpers do
     def deck
-      Manabi.create_deck(params.fetch(:id))
+      @deck ||= Manabi.create_deck(params.fetch(:id))
     end
 
     def topics
       Manabi.create_topics(*params.fetch(:topics, []))
     end
   end
+
+  after { headers 'X-Total-Count' => deck.size }
 
   get do
     cache_control :no_store

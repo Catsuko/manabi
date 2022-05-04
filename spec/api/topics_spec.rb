@@ -20,6 +20,7 @@ RSpec.describe 'Deck Topics Resource', :using_redis, type: :api do
 
     it { expect(subject.status).to eq 200 }
     it { expect(parsed_body).to match_array(topics) }
+    it { expect(subject.headers).to include('X-Total-Count' => topics.size) }
   end
 
   describe 'POST' do
@@ -29,6 +30,7 @@ RSpec.describe 'Deck Topics Resource', :using_redis, type: :api do
 
     it { expect(subject.status).to eq 200 }
     it { expect(parsed_body).to contain_exactly(topics_input) }
+    it { expect(subject.headers).to include('X-Total-Count' => 1) }
 
     it 'topic is added to the deck' do
       expect { subject }.to change { deck.peek(1) }.from([]).to Manabi.create_topics(topics_input)
@@ -43,6 +45,7 @@ RSpec.describe 'Deck Topics Resource', :using_redis, type: :api do
     shared_examples 'topic is deleted' do
       it { expect(subject.status).to eq 200 }
       it { expect(parsed_body).to match_array(topics) }
+      it { expect(subject.headers).to include('X-Total-Count' => 0) }
 
       it 'topic is removed from the deck' do
         expect { subject }.to change { deck.peek(topics.size) }.to([])
