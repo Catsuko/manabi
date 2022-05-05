@@ -2,7 +2,7 @@
   box-sizing: content-box;
 
   & > div {
-    background: url('./papyrus.webp');
+    background: url('../images/papyrus.webp');
 
     @for $i from 0 to 20 {
       &:nth-child(#{$i}) {
