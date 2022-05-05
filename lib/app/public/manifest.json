@@ -6,21 +6,6 @@
       "src": "icon-stack.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/svg"
-    },
-    {
-      "src": "icon-add.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
-    },
-    {
-      "src": "icon-peek.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
-    },
-    {
-      "src": "icon-take.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg"
     }
   ],
   "start_url": ".",
