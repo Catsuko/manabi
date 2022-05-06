@@ -23,7 +23,13 @@ namespace '/decks/:id/topics' do
     end
   end
 
-  after { headers 'X-Total-Count' => deck.size }
+  after do
+    headers(
+      'X-Total-Count' => deck.size,
+      'Access-Control-Expose-Headers' => 'X-Total-Count',
+      'Access-Control-Allow-Origin' => '*'
+    )
+  end
 
   get do
     cache_control :no_store
