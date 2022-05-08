@@ -3,9 +3,17 @@
 require 'sinatra'
 require 'sinatra/namespace'
 require 'rack/contrib'
+require 'rack/cors'
 require_relative 'manabi'
+require 'byebug'
 
 use Rack::JSONBodyParser
+use Rack::Cors do
+  allow do
+    origins '*'
+    resource '*', expose: %w[X-Total-Count], methods: %i[get post delete put patch options header]
+  end
+end
 
 set :default_content_type, :json
 set :show_exceptions, :after_handler
@@ -25,9 +33,7 @@ namespace '/decks/:id/topics' do
 
   after do
     headers(
-      'X-Total-Count' => deck.size,
-      'Access-Control-Expose-Headers' => 'X-Total-Count',
-      'Access-Control-Allow-Origin' => '*'
+      'X-Total-Count' => deck.size
     )
   end
 

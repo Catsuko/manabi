@@ -26,7 +26,7 @@ module Manabi
       end
 
       def peek(number)
-        raise ArgumentError, 'n must be positive' unless number.positive?
+        raise ArgumentError, 'n cannot be negative' if number.negative?
 
         @redis.srandmember(@key, number).map { |topic_str| Topic.new(topic_str) }
       end
