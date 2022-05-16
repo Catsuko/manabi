@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/manabi/static/css/main.9867f8cd.css",
-    "main.js": "/manabi/static/js/main.d8a4ffe3.js",
+    "main.css": "/manabi/static/css/main.935dbf4d.css",
+    "main.js": "/manabi/static/js/main.c5a4e340.js",
     "static/media/papyrus.webp": "/manabi/static/media/papyrus.5b3df39e78bdf59696dd.webp",
     "index.html": "/manabi/index.html",
     "static/media/icon-add.svg": "/manabi/static/media/icon-add.9edff30ea6486244b9faaf984cdbe99f.svg",
     "static/media/icon-take.svg": "/manabi/static/media/icon-take.e27cd895b520ac616b5c44763b8d9857.svg",
-    "main.9867f8cd.css.map": "/manabi/static/css/main.9867f8cd.css.map",
-    "main.d8a4ffe3.js.map": "/manabi/static/js/main.d8a4ffe3.js.map"
+    "main.935dbf4d.css.map": "/manabi/static/css/main.935dbf4d.css.map",
+    "main.c5a4e340.js.map": "/manabi/static/js/main.c5a4e340.js.map"
   },
   "entrypoints": [
-    "static/css/main.9867f8cd.css",
-    "static/js/main.d8a4ffe3.js"
+    "static/css/main.935dbf4d.css",
+    "static/js/main.c5a4e340.js"
   ]
 }
