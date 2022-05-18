@@ -16,9 +16,8 @@ module Manabi
     arr.map { |str| Topic.new(str) }
   end
 
-  def self.configure(uri:, password:)
-    $uri = uri
-    @@redis = Redis.new(host: uri.host, port: uri.port, password: password)
+  def self.configure(host:, post:, password:)
+    @@redis = Redis.new(host: host, port: port, password: password)
   end
 
   def self.redis_store

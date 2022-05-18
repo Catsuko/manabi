@@ -21,12 +21,8 @@ set :show_exceptions, :after_handler
 # TODO: Improve redis config, see what sidekiq does!
 
 configure do
-  uri_str, password = ENV.values_at('REDIS_URI', 'REDIS_PASSWORD')
-  Manabi.configure(uri: URI.parse(uri_str), password: password) unless uri_str.nil?
-end
-
-get '/debug' do
-  "#{$uri.host} | #{$uri.port} | #{ENV['REDIS_URI']}"
+  host, port, password = ENV.values_at('REDIS_HOST', 'REDIS_PORT', 'REDIS_PASSWORD')
+  Manabi.configure(host: host, port: port, password: password) unless host.nil?
 end
 
 namespace '/decks/:id/topics' do
