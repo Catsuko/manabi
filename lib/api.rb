@@ -5,7 +5,6 @@ require 'sinatra/namespace'
 require 'rack/contrib'
 require 'rack/cors'
 require_relative 'manabi'
-require 'byebug'
 
 use Rack::JSONBodyParser
 use Rack::Cors do
