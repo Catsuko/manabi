@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
+    "predeploy": "API_URL=https://manabi-api.herokuapp.com/decks/lewis/topics npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
