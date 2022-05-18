@@ -25,10 +25,6 @@ configure do
   Manabi.configure(uri: URI.parse(uri_str), password: password) unless uri_str.nil?
 end
 
-get '/debug' do
-  ENV.inspect
-end
-
 namespace '/decks/:id/topics' do
   helpers do
     def deck

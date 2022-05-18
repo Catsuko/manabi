@@ -17,7 +17,7 @@ module Manabi
   end
 
   def self.configure(uri:, password:)
-    @@redis = Redis.new(host: uri.host, port: uri.port, password: uri.password)
+    @@redis = Redis.new(host: uri.host, port: uri.port, password: password)
   end
 
   def self.redis_store
