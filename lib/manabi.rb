@@ -16,7 +16,7 @@ module Manabi
     arr.map { |str| Topic.new(str) }
   end
 
-  def self.configure(host:, post:, password:)
+  def self.configure(host:, port:, password:)
     @@redis = Redis.new(host: host, port: port, password: password)
   end
 
