@@ -19,6 +19,12 @@ set :default_content_type, :json
 set :show_exceptions, :after_handler
 
 # TODO: Parameter Validation (required, in bounds etc)
+# TODO: Improve redis config, see what sidekiq does!
+
+configure do
+  uri_str, password = ENV.values_at('REDIS_URI', 'REDIS_PASSWORD')
+  Manabi.configure(uri: URI.parse(uri_str), password: password) unless uri_str.nil?
+end
 
 namespace '/decks/:id/topics' do
   helpers do
