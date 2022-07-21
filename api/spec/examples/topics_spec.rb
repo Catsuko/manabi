@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'sinatra'
-require 'api'
-
 RSpec.describe 'Deck Topics Resource', :using_redis, type: :api do
   let(:app) { Sinatra::Application }
   let(:deck_id) { 'test' }
