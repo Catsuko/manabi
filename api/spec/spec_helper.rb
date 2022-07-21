@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require 'byebug'
-require 'manabi'
 require 'redis'
 require 'rack/test'
+require 'sinatra'
+require_relative '../api'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods, type: :api
