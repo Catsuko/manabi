@@ -1,0 +1,27 @@
+example_id                                        | status | run_time        |
+------------------------------------------------- | ------ | --------------- |
+./spec/examples/deck/redis_set_spec.rb[1:1:1:1:1] | passed | 0.00425 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:1:2:1:1] | passed | 0.00101 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:2:1:1]   | passed | 0.0024 seconds  |
+./spec/examples/deck/redis_set_spec.rb[1:2:2:1]   | passed | 0.00074 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:3:1:1]   | passed | 0.00079 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:3:2:1]   | passed | 0.00073 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:4:1:1]   | passed | 0.00055 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:4:2:1]   | passed | 0.00061 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:4:3:1]   | passed | 0.00096 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:4:3:2]   | passed | 0.00097 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:5:1:1]   | passed | 0.00054 seconds |
+./spec/examples/deck/redis_set_spec.rb[1:5:2:1]   | passed | 0.00053 seconds |
+./spec/examples/topic_spec.rb[1:1:1:1]            | passed | 0.00102 seconds |
+./spec/examples/topic_spec.rb[1:1:2:1]            | passed | 0.00009 seconds |
+./spec/examples/topic_spec.rb[1:1:3:1]            | passed | 0.00008 seconds |
+./spec/examples/topic_spec.rb[1:1:4:1]            | passed | 0.0001 seconds  |
+./spec/examples/topic_spec.rb[1:1:5:1]            | passed | 0.00008 seconds |
+./spec/examples/topic_spec.rb[1:2:1]              | passed | 0.00006 seconds |
+./spec/examples/topic_spec.rb[1:2:2]              | passed | 0.00005 seconds |
+./spec/examples/topic_spec.rb[1:3:1:1]            | passed | 0.00007 seconds |
+./spec/examples/topic_spec.rb[1:3:1:2]            | passed | 0.00056 seconds |
+./spec/examples/topic_spec.rb[1:3:2:1]            | passed | 0.00008 seconds |
+./spec/examples/topic_spec.rb[1:3:2:2]            | passed | 0.00007 seconds |
+./spec/examples/topic_spec.rb[1:3:3:1]            | passed | 0.00007 seconds |
+./spec/examples/topic_spec.rb[1:3:3:2]            | passed | 0.00006 seconds |
