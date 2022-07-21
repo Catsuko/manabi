@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Catsuko/manabi.git
-  revision: 2dc87a37192e3428d5498a01a07b7d2060012bb9
-  branch: dir-restructure
+  revision: 341f5c48e03f47acaae5d2900c22fa6f5fb23286
+  branch: main
   glob: core/*.gemspec
   specs:
     manabi (0.0.1)
