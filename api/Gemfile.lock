@@ -80,6 +80,7 @@ GEM
     unicode-display_width (2.2.0)
 
 PLATFORMS
+  ruby
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -96,7 +97,7 @@ DEPENDENCIES
   sinatra-contrib
 
 RUBY VERSION
-   ruby 2.6.8p205
+   ruby 2.7.6p219
 
 BUNDLED WITH
    2.2.28
