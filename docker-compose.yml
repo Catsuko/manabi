@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    build: ./api
+    ports:
+      - 4567:4567
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: null
+      REDIS_PASSWORD: null
+  redis:
+    image: redis:alpine
+  web:
+    build: './web'
+    ports:
+      - 4568:4568
+    environment:
+      API_HOST: api
+      PORT: 4568

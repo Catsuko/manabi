@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // TODO: load deck name from route
 // TODO: disable click while a request is happening
 // TODO: reduce lag!
-const TOPIC_RESOURCE = 'https://manabi-api.herokuapp.com/decks/test/topics'
+const TOPIC_RESOURCE = `http://localhost:4567/decks/test/topics`
 
 const fromApi = (WrappedComponent) => class extends Component {
   state = {
