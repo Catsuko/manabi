@@ -1,3 +1,3 @@
-require_relative 'lib/api'
+require './api'
 
 run Sinatra::Application

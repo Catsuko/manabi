@@ -38,7 +38,7 @@ namespace '/decks/:id/topics' do
 
   after do
     headers(
-      'X-Total-Count' => deck.size
+      'X-Total-Count' => deck.size.to_s
     )
   end
 
