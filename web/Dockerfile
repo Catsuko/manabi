@@ -1,16 +1,24 @@
-FROM node:18.6-alpine
+FROM node:18.6-alpine AS builder
 
-WORKDIR /web
+WORKDIR /app
 
-ENV PATH /web/node_modules/.bin:$PATH
+COPY package*.json /app/
 
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN npm install
 
-COPY . ./
+COPY ./ /app/
 
-EXPOSE 4568
+RUN npm run build
 
-CMD ["npm", "start"]
+FROM nginx:alpine
+
+WORKDIR /usr/share/nginx/html
+
+RUN rm -rf *
+
+COPY --from=builder /app/build/ .
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

@@ -13,7 +13,7 @@ services:
   web:
     build: './web'
     ports:
-      - 4568:4568
+      - 4568:80
     environment:
       API_HOST: api
       PORT: 4568
