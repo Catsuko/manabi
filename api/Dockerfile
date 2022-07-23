@@ -1,13 +1,13 @@
-FROM ruby:2.7.6-slim
+FROM ruby:2.7.6-alpine
 
 WORKDIR /api
 
 COPY . /api
 
-RUN apt-get -y update
-RUN apt-get install -y build-essential
-RUN apt-get -y install git
-RUN apt-get -y install make
+RUN apk update
+RUN apk add build-base
+RUN apk add git
+RUN apk add make
 RUN gem install bundler:2.2.28
 RUN bundle config --global without development test
 RUN bundle install
