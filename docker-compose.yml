@@ -6,8 +6,6 @@ services:
       - 4567:4567
     environment:
       REDIS_HOST: redis
-      REDIS_PORT: null
-      REDIS_PASSWORD: null
   redis:
     image: redis:alpine
   web:
